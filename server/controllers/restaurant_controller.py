@@ -1,6 +1,5 @@
 from server.models import Restaurant
 from flask import Blueprint, jsonify, make_response, request
-import requests
 
 restaurants_bp = Blueprint('restaurants', __name__)
 
