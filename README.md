@@ -1,1 +1,1 @@
-# pizza-api-challenge
+# Pizza API Challenge
