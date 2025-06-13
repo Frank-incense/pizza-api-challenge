@@ -14,3 +14,6 @@ class Restaurant_Pizza(db.Model, SerializerMixin):
     pizza = db.relationship('Pizza', back_populates='RestaurantPizzas')
 
     serialize_rules =('-restaurant.RestaurantPizzas','-pizza.RestaurantPizzas',)
+
+    def __repr__(self):
+        return f"Restaurant Pizza: {self.id}, {self.price}"
