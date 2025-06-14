@@ -5,7 +5,7 @@ class Restaurant_Pizza(db.Model, SerializerMixin):
     __tablename__ = 'restaurant-pizzas'
 
     id = db.Column(db.Integer, primary_key=True)
-    price = db.Column(db.Float, nullable=False)
+    _price = db.Column(db.Integer, nullable=False)
     
     restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurants.id'))
     pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'))
@@ -15,5 +15,17 @@ class Restaurant_Pizza(db.Model, SerializerMixin):
 
     serialize_rules =('-restaurant.RestaurantPizzas','-pizza.RestaurantPizzas',)
 
+    @property
+    def price(self):
+        return self._price
+    
+    @price.setter
+    def price(self, val):
+        print(val, type(val))
+        if isinstance(val, int) and 1 < val < 30:
+            self._price = val
+        else:
+            raise ValueError('Price must be between 1 and 30')
+        
     def __repr__(self):
         return f"Restaurant Pizza: {self.id}, {self.price}"
