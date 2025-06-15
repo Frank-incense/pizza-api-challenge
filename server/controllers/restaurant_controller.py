@@ -1,4 +1,5 @@
 from server.models import Restaurant
+from server.config import db
 from flask import Blueprint, jsonify, make_response, request
 
 restaurants_bp = Blueprint('restaurants', __name__)
@@ -6,10 +7,11 @@ restaurants_bp = Blueprint('restaurants', __name__)
 @restaurants_bp.route("/restaurants")
 def restaurants():
     restaurants = Restaurant.query.all()
-    print(restaurants)
+    
     if len(restaurants) > 0:
         response_body = [restaurant.to_dict() for restaurant in restaurants]
         response_status = 200
+
     else:
         response_body = {
             'Message': 'No restaurants found'
@@ -26,12 +28,15 @@ def restaurant(id):
         if request.method == 'GET':
             response_body = restaurant.to_dict()
             response_status = 200
+
         elif request.method == 'DELETE':
-            response_body = 'No Content'
+            db.session.delete(restaurant)
+            db.session.commit()
+            response_body = 'Restaurant deleted'
             response_status = 204
     else:
         response_body = {
-            'error': 'Restaurant no found'
+            'error': 'Restaurant not found'
         }
         response_status = 404
     

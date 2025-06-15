@@ -19,7 +19,9 @@ def restaurant_pizzas():
 
         res = new_restaurant_pizza.to_dict()
         stat = 200
+
         return make_response(res, stat)
+    
     except ValueError as val:
         return make_response({'errors':[f'{val}']}, 400)
 

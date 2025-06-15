@@ -10,8 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 
 app.config.from_prefixed_env(prefix='FLASK')
-db.init_app(app=app)
 
+db.init_app(app=app)
 migrate = Migrate(app=app, db=db)
 
 register_routes(app=app)

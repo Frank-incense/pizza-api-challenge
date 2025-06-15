@@ -8,7 +8,7 @@ class Pizza(db.Model, SerializerMixin):
     name = db.Column(db.String, nullable=False)
     ingredients = db.Column(db.String, nullable=False)
 
-    RestaurantPizzas = db.relationship('Restaurant_Pizza', back_populates='pizza', cascade='all, delete-orphan')
+    RestaurantPizzas = db.relationship('Restaurant_Pizza', back_populates='pizza')
 
     serialize_rules = ('-RestaurantPizzas.pizza',)
     serialize_only = ('id', 'name', 'ingredients',)

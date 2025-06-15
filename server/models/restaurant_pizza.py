@@ -21,7 +21,7 @@ class Restaurant_Pizza(db.Model, SerializerMixin):
     
     @price.setter
     def price(self, val):
-        print(val, type(val))
+        
         if isinstance(val, int) and 1 < val < 30:
             self._price = val
         else:
