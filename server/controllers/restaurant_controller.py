@@ -32,7 +32,7 @@ def restaurant(id):
         elif request.method == 'DELETE':
             db.session.delete(restaurant)
             db.session.commit()
-            response_body = 'Restaurant deleted'
+            response_body = ''
             response_status = 204
     else:
         response_body = {

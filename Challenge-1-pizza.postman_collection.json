@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "59204bf8-39d2-48ca-80aa-2dfcfac2fcb3",
+		"name": "Challenge-1-pizza",
+		"description": "A collection of endpoints for managing pizzas, restaurants, and restaurant_pizzas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45905411",
+		"_collection_link": "https://frankincenseokwemba.postman.co/workspace/Frankincense-Okwemba's-Workspac~09f51481-fceb-4528-84f9-600f4f2cf216/collection/45905411-59204bf8-39d2-48ca-80aa-2dfcfac2fcb3?action=share&source=collection_link&creator=45905411"
+	},
+	"item": [
+		{
+			"name": "List Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5555/restaurants",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5555",
+					"path": [
+						"restaurants"
+					]
+				},
+				"description": "- Method: `GET`\n    \n- URL: `http://127.0.0.1:5555/restaurants`\n    \n- Description: List all restaurants"
+			},
+			"response": []
+		},
+		{
+			"name": "Get restaurant by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5555/restaurants/21",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5555",
+					"path": [
+						"restaurants",
+						"21"
+					]
+				},
+				"description": "- Method: `GET`\n    \n- URL: `http://127.0.0.1:5555/restaurants/12`\n    \n- Description: Get one restaurant with its pizzas"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete restaurant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5555/restaurants/21",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5555",
+					"path": [
+						"restaurants",
+						"21"
+					]
+				},
+				"description": "- Method: `DELETE`\n    \n- URL: `http://127.0.0.1:5555/restaurants/14`\n    \n- Description: Delete one restaurant with its pizzas"
+			},
+			"response": []
+		},
+		{
+			"name": "Get deleted restaurant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5555/restaurants/21",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5555",
+					"path": [
+						"restaurants",
+						"21"
+					]
+				},
+				"description": "- Method: `GET`\n    \n- URL: `http://127.0.0.1:5555/restaurants/14`\n    \n- Description: Returns error message indicating not in DB."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pizzas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5555/pizzas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5555",
+					"path": [
+						"pizzas"
+					]
+				},
+				"description": "- Method: `GET`\n    \n- URL: `http://127.0.0.1:5555/pizzas`\n    \n- Description: Geta a list of all pizzas"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Restaurant pizzas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"price\": 12,\n  \"pizza_id\": 21,\n  \"restaurant_id\": 22\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5555/restaurant_pizzas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5555",
+					"path": [
+						"restaurant_pizzas"
+					]
+				},
+				"description": "- Method: `POST`\n    \n- URL: `http://127.0.0.1:5555/restaurant_pizzas`\n    \n- Description: Create a restaurant-pizza entry"
+			},
+			"response": []
+		}
+	]
+}
