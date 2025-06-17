@@ -21,7 +21,7 @@ My task was to build a RESTful API for a Pizza Restaurant using flask. I am expe
 4. Create .env file for your environment variables.
     ```
     FLASK_SQLACHEMY_DATABASE_URI=postgresql://<username>:<password>@localhost:5432/pizza_api
-    export FLASK_APP=server.app  # Or set in .flaskenv
+    export FLASK_APP=server.app 
     export FLASK_RUN_PORT=5555
 
     ```
