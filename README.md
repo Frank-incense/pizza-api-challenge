@@ -18,27 +18,19 @@ My task was to build a RESTful API for a Pizza Restaurant using flask. I am expe
     ```
     pip install -r requirements.txt
     ``` 
-4. Configure environment variables.
+4. Create .env file for your environment variables.
     ```
     FLASK_SQLACHEMY_DATABASE_URI=postgresql://<username>:<password>@localhost:5432/pizza_api
+    export FLASK_APP=server.app  # Or set in .flaskenv
+    export FLASK_RUN_PORT=5555
 
     ```
 5. Run the application
     ```
-    export FLASK_APP=server.app  # Or set in .flaskenv
-    export FLASK_ENV=development
     flask run
     ```
 ## Database setup
-1. Initialize Migrations
-```
-flask db init
-```
-2. Generate Migration Scripts
-```
-flask db migrate -m "Initial migration"
-```
-3. Apply Migrations
+1. Apply Migrations
 ```
 flask db upgrade
 ```
