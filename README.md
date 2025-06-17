@@ -20,9 +20,9 @@ My task was to build a RESTful API for a Pizza Restaurant using flask. I am expe
     ``` 
 4. Create .env file for your environment variables.
     ```
-    FLASK_SQLACHEMY_DATABASE_URI=postgresql://<username>:<password>@localhost:5432/pizza_api
-    export FLASK_APP=server.app 
-    export FLASK_RUN_PORT=5555
+    FLASK_SQLALCHEMY_DATABASE_URI=postgresql://<username>:<password>@localhost:5432/pizza_api
+    FLASK_APP=server/app.py  
+    FLASK_RUN_PORT=5555
 
     ```
 5. Run the application
